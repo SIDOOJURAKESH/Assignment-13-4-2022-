@@ -1,0 +1,11 @@
+#include<stdio.h>
+int main()
+{
+  FILE *fp;
+  fp = fopen("new.txt","w"); 
+  if(fp)
+  printf("opened sucessfully");
+  else
+  printf("not opened");
+  return 0;
+}
