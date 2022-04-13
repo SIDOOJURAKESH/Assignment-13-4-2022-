@@ -1,0 +1,28 @@
+#include<stdio.h>
+int add(int a,int b)
+{
+	return a+b;
+}
+int sub(int a,int b)
+{
+	return a-b;
+}
+int mul(int a, int b)
+{
+	return a*b;
+}
+int div(int a ,int b)
+{
+	return a/b;
+}
+int main()
+{
+int a,b,n;
+printf("Enter Your choice\n0.Add\n1.Sub\n2.Mul\n3.div\n");
+scanf("%d",&n);
+printf("enter numbers\n");
+scanf("%d%d",&a,&b);
+int (*fp[4])(int,int)={add,sub,mul,div};
+printf("Result:%d\n",(*fp[n])(a,b));
+return 0;
+}
