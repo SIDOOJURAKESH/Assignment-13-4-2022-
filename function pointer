@@ -1,0 +1,44 @@
+#include<stdio.h>
+int add(int a,int b)
+{
+	return a+b;
+}
+int sub(int a,int b)
+{
+	return a-b;
+}
+int mul(int a, int b)
+{
+	return a*b;
+}
+int div(int a ,int b)
+{
+	return a/b;
+}
+int main()
+{
+int a,b,n;
+printf("Enter Your Choice\n0.Add\n1.Sub\n2.Mul\n3.div\n");
+scanf("%d",&n);
+printf("enter numbers\n");
+scanf("%d%d",&a,&b);
+int (*fp)(int,int);
+switch(n)
+{
+case 0:	fp=add;
+	printf("Addition:%d\n",(*fp)(a,b));//add(a,b);
+	break;
+case 1: fp=sub;
+	printf("Sub:%d\n",(*fp)(a,b));
+	break;
+case 2: fp=&mul;
+	printf("Mul:%d\n",fp(a,b));
+	break;
+case 3:	fp=&div;
+	printf("Div:%d\n",fp(a,b));
+	break;
+default:printf("Enter Correct Option\n");
+}
+return 0;
+	
+}
